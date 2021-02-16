@@ -1,0 +1,399 @@
+body{
+    margin: 0px;
+}
+.container{
+    max-width: 1366px;/*Максимальная ширина*/
+    margin: 0px auto;/*Ноль отступов*/
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;/*Шрифт*/
+    overflow: hidden;
+}
+/*Шапка*/
+.header .content{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.header .phone1{/*Номер телефона*/
+    font-size: 20px;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+.header .call{/*Кнока*/
+    background-color: #c86827;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 20px 30px;
+    border-radius: 30px;
+    transition: all 0.5s;
+}
+.header .call:hover{
+    background-color: white;
+    color: #c86827;
+}
+.header .phone{
+    margin-top: 40px;
+    padding-left: 860px;
+}
+@media(max-width:1025px){/*Для планшета*/
+    .header .phone{
+        margin-top: 40px;
+        padding-left: 550px;
+    }
+}
+
+h2{
+    text-align: center;
+    font-size: 26px;
+    color: #c86827;
+}
+
+/*Слайдер*/
+.slider-adaptive{
+margin:50px ;
+}
+.slider-adaptive input{
+    display: none;/*Прячем*/
+}
+.slider-adaptive .slider{
+    text-align: center;
+    margin-top: 30px;
+}
+.slider-adaptive label{/*Настраиваем переключатели*/
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  margin:0 3px;
+  background-color: #c86827;
+}
+/*Фоны кнопок при нажатии*/
+#slide1:checked~.slider label[for="slide1"]{
+    background-color: #915730;
+}
+#slide2:checked~.slider label[for="slide2"]{
+    background-color: #915730;
+}
+#slide3:checked~.slider label[for="slide3"]{
+    background-color: #915730;
+}
+#slide4:checked~.slider label[for="slide4"]{
+    background-color: #915730;
+}
+
+.slider-adaptive .slider-content{
+    width: 95%;
+    height: 500px;
+    overflow: hidden;
+}
+.slider-adaptive .slider-content .slider-next{
+    width: 100%;
+    height: 500px;
+    display: flex;
+    transition: all 0.5s;
+}
+.slider-adaptive .slider-content .slider-next .x{
+    width: 100%;
+    height: 500px;
+    flex-shrink: 0;
+}
+/*Фоны слайдов*/
+.slider-adaptive .slider-content .slider-next .x1{
+    background: url(content/slider/1.jpg) no-repeat;
+    background-size: cover;
+}
+.slider-adaptive .slider-content .slider-next .x2{
+    background: url(content/slider/2.jpg) no-repeat;
+    background-size: cover;
+}
+.slider-adaptive .slider-content .slider-next .x3{
+    background: url(content/slider/3.jpg) no-repeat;
+    background-size: cover;
+}
+.slider-adaptive .slider-content .slider-next .x4{
+    background: url(content/slider/1.jpg) no-repeat;
+    background-size: cover;
+}
+/*Переключение слайдов*/
+#slide2:checked~.slider-content .slider-next{
+   transform: translateX(-100%);
+}
+#slide3:checked~.slider-content .slider-next{
+    transform: translateX(-200%);
+ }
+ #slide4:checked~.slider-content .slider-next{
+    transform: translateX(-300%);
+ }
+
+ .slider-adaptive .slider-content .slider-next .info{
+     color: white;
+     background-color: #c86827;
+     font-size: 18px;
+     padding: 30px 40px;
+     margin-top: 370px;
+ }
+
+
+
+ /*Преимущества*/
+ .features{
+     padding: 30px 50px;
+ }
+ .features p{
+     color: #c86827;
+     font-size: 20px;
+ }
+ .features li{
+     font-size: 18px;
+ }
+
+
+
+ /*Товары*/
+ .filter{
+     display: flex;
+     flex-wrap: wrap;
+     padding: 30px 50px;
+ }
+ .filter input{
+display: none;/*Прячем переключатели*/
+ }
+ .filter label{
+     width: 23%;
+     margin-right: 2%;
+     height: 40px;
+     margin-bottom: 40px;
+     background-color: #c86827;
+     border-radius: 30px;
+     padding-top: 20px;
+     text-align: center;
+     color: white;
+     font-size: 20px;
+     transition: all 0.5s;
+ }
+ .filter img{
+     width: 230px;
+ }
+ /*Кнопки при нажатии*/
+ .filter input[type="radio"][id="giro"]:checked+label{
+     background-color: white;
+     color: #c86827;
+ }
+ .filter input[type="radio"][id="samokat"]:checked+label{
+    background-color: white;
+    color: #c86827;
+}
+.filter input[type="radio"][id="seagway"]:checked+label{
+    background-color: white;
+    color: #c86827;
+}
+/*Прячем ненужные блоки*/
+.filter input[type="radio"][id="seagway"]:checked~.giro,
+.filter input[type="radio"][id="seagway"]:checked~.samokat{
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin:0;
+    opacity: 0;
+}
+.filter input[type="radio"][id="giro"]:checked~.seagway,
+.filter input[type="radio"][id="giro"]:checked~.samokat{
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin:0;
+    opacity: 0;
+}
+.filter input[type="radio"][id="samokat"]:checked~.giro,
+.filter input[type="radio"][id="samokat"]:checked~.seagway{
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin:0;
+    opacity: 0;
+}
+.filter .block{/*Блок*/
+    transition: all 0.5s;
+    border: 2px solid #c86827;
+    border-radius: 20px;
+    margin-right: 6%;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+
+/*Консультанты*/
+.consultant .info{
+ display: flex; 
+  flex-wrap: wrap;
+  margin: 50px;
+}
+.consultant .info .cons{/*Блок с консультантом*/
+    width: 400px;
+    margin-right: 15px;
+}
+.consultant .info .cons .img{
+    width: 200px;
+    height: 200px;
+    margin: 0px auto;
+}
+/*Фото консультантов*/
+.consultant .info .cons1 .img{
+    background: url(content/cons1.jpg) no-repeat;
+    background-size: cover;
+    background-position: -40px 0;
+}
+.consultant .info .cons2 .img{
+    background: url(content/cons2.jpg) no-repeat;
+    background-size: cover;
+    background-position: -40px 0;
+}
+.consultant .info .cons3 .img{
+    background: url(content/cons3.jpg) no-repeat;
+    background-size: cover;
+    background-position: -40px 0;
+}
+.consultant .info .name{/*Имя*/
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #c86827;
+    margin-bottom: -30px;
+}
+
+/*Кнопка наверх*/
+.top{
+    position: fixed;
+    text-align: center;
+    margin-top: 550px;
+    color: white;
+    background-color:#c86827 ;
+    font-size: 20px;
+    text-decoration: none;
+    padding:20px 50px;
+    transition: all 0.5s;
+    border-radius: 30px;
+}
+.top:hover{
+    background-color: white;
+    color:#c86827 ;
+}
+/*Для адаптива*/
+@media(max-width:1366px){/*Для планшета*/
+    .top{
+        position: fixed;
+        text-align: center;
+       margin-top: 500px;
+        margin-left: 100px;
+    }
+}
+@media(max-width:1024px){/*Для планшета*/
+    .top{
+        position: fixed;
+        text-align: center;
+        margin-top: 1000px;
+        margin-left: 100px;
+        color: white;
+    background-color:#c86827 ;
+    }
+    .top:hover{
+        background-color: white;
+        color:#c86827 ;
+    }
+}
+
+
+
+
+
+
+
+/*Брэнды*/
+.brandx{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 50px ;
+}
+.brandx h3{
+    color: #c86827;
+}
+.brandx div{
+    margin-right: 80px;
+    margin-left: 80px;
+}
+.brandx ul{
+    list-style-type: none;
+    font-size: 18px;
+}
+.brandx li{
+    margin-bottom: 10px;
+}
+
+
+
+
+/*Доставка и оплата*/
+.delivery{
+    margin: 30px 50px;
+}
+.delivery h3{
+    color: #c86827;
+    margin-top: 50px;
+}
+.delivery p{
+    line-height: 20px;
+    font-size: 18px;
+    text-indent:25px;
+}
+
+
+/*Форма подписки ны рассылку*/
+.footer{
+    background-color: #c86827;
+    padding:30px 120px ;
+    color: white;
+    margin-top: 90px;
+}
+.footer .copy{
+    text-align: center;
+    margin-top: 70px;
+    color: white;
+}
+.footer form{
+margin: 0px auto;
+}
+.footer .footerin{
+    display: flex;
+    flex-wrap: nowrap;
+}
+.footer .text{
+    width: 450px;
+    text-indent:25px;
+    margin-right: 150px;
+    font-size: 18px;
+}
+.footer form input{
+    width: 300px;
+    height: 50px;
+    padding: 5px 20px ;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    margin-bottom:10px;
+}
+.footer form button{
+    width: 180px;
+    height: 50px;
+    background: white;
+    color: #c86827;
+    font-size:18px;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.5s;
+    margin-left: 90px;
+}
+.footer form button:hover{
+    background-color: #915730;
+    color: white;
+}
